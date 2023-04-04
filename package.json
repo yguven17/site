@@ -2,7 +2,7 @@
   "name": "github-react-portfolio-template",
   "homepage": "https://yguven17.github.io/",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "bootstrap": "^5.2.3",
