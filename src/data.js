@@ -5,8 +5,9 @@ import {
   FaLinux,
   FaGitAlt,
   FaGithubSquare,
-  FaLink,
-  FaUbuntu
+
+  FaUbuntu,
+  FaLinkedin
 } from "react-icons/fa";
 import { DiDjango , DiTerminal } from "react-icons/di";
 
@@ -27,7 +28,7 @@ export { HeroDark as Dark };
 export const githubUsername = "yguven17";
 
 // Blog link icon (imported above)
-export const Blog = <FaLink />;
+export const Blog = <FaLinkedin />;
 
 /* About Me
  **************************************************************
