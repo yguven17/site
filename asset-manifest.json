@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/yakupenesguven.github.io/static/css/main.deb5c223.css",
-    "main.js": "/yakupenesguven.github.io/static/js/main.42e0b38a.js",
+    "main.js": "/yakupenesguven.github.io/static/js/main.114acf5e.js",
     "static/media/hero-dark.jpg": "/yakupenesguven.github.io/static/media/hero-dark.f60ed2687214cd6ca026.jpg",
     "static/media/hero-light.jpg": "/yakupenesguven.github.io/static/media/hero-light.f60ed2687214cd6ca026.jpg",
     "static/media/logo.svg": "/yakupenesguven.github.io/static/media/logo.725a1a671fe87983db993c900aa1aaca.svg",
@@ -9,10 +9,10 @@
     "static/media/GH.svg": "/yakupenesguven.github.io/static/media/GH.b9e9a9aa6f05e9dfe5dcb8991bda3e4d.svg",
     "index.html": "/yakupenesguven.github.io/index.html",
     "main.deb5c223.css.map": "/yakupenesguven.github.io/static/css/main.deb5c223.css.map",
-    "main.42e0b38a.js.map": "/yakupenesguven.github.io/static/js/main.42e0b38a.js.map"
+    "main.114acf5e.js.map": "/yakupenesguven.github.io/static/js/main.114acf5e.js.map"
   },
   "entrypoints": [
     "static/css/main.deb5c223.css",
-    "static/js/main.42e0b38a.js"
+    "static/js/main.114acf5e.js"
   ]
 }
