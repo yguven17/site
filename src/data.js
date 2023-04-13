@@ -35,7 +35,7 @@ export const Blog = <FaLinkedin />;
   Add a second paragraph for the about me section.
 */
 export const moreInfo =
-  "As a fourth-year computer & electrical and electronic engineering student, I possess a strong foundation in programming languages, algorithms, computer networks, software engineering, and database management. With practical experience gained from internships and personal projects, I excel at applying theoretical concepts to real-world problems. Highly motivated with excellent problem-solving and communication skills, I am eager to apply my knowledge to a career in computer engineering.";
+  "As a fourth-year computer & electrical and electronic engineering student, I possess a strong foundation in programming languages, algorithms, computer networks, software engineering, and database management. With practical experience gained from internships and personal projects, I excel at applying theoretical concepts to real-world problems. Highly motivated with excellent problem-solving and communication skills, I am eager to apply my knowledge to a career in computer engineering. ";
 
 /* Skills
  ************************************************************** 
