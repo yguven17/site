@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/yguven17.github.io/static/css/main.deb5c223.css",
-    "main.js": "/yguven17.github.io/static/js/main.e3277cb4.js",
-    "static/media/hero-dark.jpg": "/yguven17.github.io/static/media/hero-dark.f60ed2687214cd6ca026.jpg",
-    "static/media/hero-light.jpg": "/yguven17.github.io/static/media/hero-light.f60ed2687214cd6ca026.jpg",
-    "static/media/logo.svg": "/yguven17.github.io/static/media/logo.725a1a671fe87983db993c900aa1aaca.svg",
-    "service-worker.js": "/yguven17.github.io/service-worker.js",
-    "static/media/GH.svg": "/yguven17.github.io/static/media/GH.b9e9a9aa6f05e9dfe5dcb8991bda3e4d.svg",
-    "index.html": "/yguven17.github.io/index.html",
-    "main.deb5c223.css.map": "/yguven17.github.io/static/css/main.deb5c223.css.map",
-    "main.e3277cb4.js.map": "/yguven17.github.io/static/js/main.e3277cb4.js.map"
+    "main.css": "/site/static/css/main.deb5c223.css",
+    "main.js": "/site/static/js/main.cdfd83f1.js",
+    "static/media/hero-dark.jpg": "/site/static/media/hero-dark.f60ed2687214cd6ca026.jpg",
+    "static/media/hero-light.jpg": "/site/static/media/hero-light.f60ed2687214cd6ca026.jpg",
+    "static/media/logo.svg": "/site/static/media/logo.725a1a671fe87983db993c900aa1aaca.svg",
+    "service-worker.js": "/site/service-worker.js",
+    "static/media/GH.svg": "/site/static/media/GH.b9e9a9aa6f05e9dfe5dcb8991bda3e4d.svg",
+    "index.html": "/site/index.html",
+    "main.deb5c223.css.map": "/site/static/css/main.deb5c223.css.map",
+    "main.cdfd83f1.js.map": "/site/static/js/main.cdfd83f1.js.map"
   },
   "entrypoints": [
     "static/css/main.deb5c223.css",
-    "static/js/main.e3277cb4.js"
+    "static/js/main.cdfd83f1.js"
   ]
 }
