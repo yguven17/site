@@ -1,1 +1,1 @@
-https://yguven17.github.io/
+https://yguven17.github.io/site/#/
