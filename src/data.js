@@ -5,11 +5,13 @@ import {
   FaLinux,
   FaGitAlt,
   FaGithubSquare,
-
+  
   FaUbuntu,
   FaLinkedin
 } from "react-icons/fa";
-import { DiDjango , DiTerminal } from "react-icons/di";
+import { DiDjango,  DiTerminal, DiRasberryPi, DiMysql } from "react-icons/di";
+import { SiArduino } from "react-icons/si";
+import { Icon } from '@iconify/react';
 
 // Projects Images (add your images to the images directory and import below)
 import Logo from "./images/logo.svg";
@@ -84,6 +86,26 @@ export const skillData = [
     id: 8,
     skill: <DiTerminal className="display-4" />,
     name: "Terminal",
+  },
+  {
+    id: 9,
+    skill: <DiMysql className="display-4" />,
+    name: "MySQL",
+  },
+  {
+    id: 10,
+    skill: <DiRasberryPi className="display-4" />,
+    name: "RasberryPi",
+  },
+  {
+    id: 11,
+    skill: <SiArduino className="display-4" />,
+    name: "Arduino",
+  },
+  {
+    id: 12,
+    skill: <Icon icon="file-icons:matlab" className="display-4" />,
+    name: "Matlab",
   },
 ];
 

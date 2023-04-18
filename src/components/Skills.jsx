@@ -17,10 +17,10 @@ export default function Skills() {
             <h2>Skills</h2>
             <div className="underline"></div>
           </Title>
-          <Row className="mt-3 align-items-center">
+          <Row className="mt-4 align-items-center">
             {skillData.map((skills) => {
               return (
-                <Col xs={4} key={skills.id} className="my-md-5">
+                <Col xs={2} key={skills.id} className="my-md-5">
                   <figure>
                     {skills.skill}
                     <figcaption>{skills.name}</figcaption>
