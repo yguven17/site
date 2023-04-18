@@ -55,7 +55,7 @@ export default function Experiences() {
                 <pb>Siemens, Part-time Working Student</pb>
                 <br />
                 <br />
-                <pd>02/2023 &ndash; 04/2023 İstanbul, T&uuml;rkiye</pd>
+                <pd>01/2023 &ndash; 04/2023 İstanbul, T&uuml;rkiye</pd>
                 <p>
                   &bull;DevOps
                   <br />
