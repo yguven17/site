@@ -13,6 +13,9 @@ import { DiDjango , DiTerminal } from "react-icons/di";
 
 // Projects Images (add your images to the images directory and import below)
 import Logo from "./images/logo.svg";
+import me from "./images/photo.jpeg";
+import education from "./images/koc.jpg";
+import company from "./images/koc.jpg";
 
 // Hero Images (add your images to the /images directory with the same names)
 import HeroLight from "./images/hero-light.jpg";
@@ -98,6 +101,10 @@ export const projectCardImages = [
   {
     name: "example-1",
     image: Logo,
+    image1: me,
+    image2: education,
+    image3: company,
+
   },
 ];
 

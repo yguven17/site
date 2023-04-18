@@ -7,6 +7,7 @@ import { moreInfo } from "../data";
 // Components
 import { Col, Container, Row } from "react-bootstrap";
 import { Title } from "./globalStyledComponents";
+import me from "../images/photo.jpeg"; 
 
 const StyledAboutMe = styled.section`
   p {
@@ -19,7 +20,7 @@ const StyledAboutMe = styled.section`
 `;
 
 export default function AboutMe() {
-  const { avatar_url, bio } = useSelector(selectData);
+  const { bio } = useSelector(selectData);
 
   return (
     <Element name={"About"} id="about">
@@ -40,10 +41,10 @@ export default function AboutMe() {
             </Col>
             <Col className="d-none d-md-block text-center">
               <img
-                src={avatar_url}
-                alt="GitHub Avatar"
+                src={me}
+                alt="me"
                 loading="lazy"
-                className="mx-auto rounded-circle"
+                className="rounded-circle"
                 style={{ width: "15rem", height: "15rem" }}
               />
             </Col>
