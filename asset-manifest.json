@@ -1,18 +1,21 @@
 {
   "files": {
     "main.css": "/site/static/css/main.deb5c223.css",
-    "main.js": "/site/static/js/main.3476772c.js",
+    "main.js": "/site/static/js/main.48542bfe.js",
     "static/media/hero-dark.jpg": "/site/static/media/hero-dark.f60ed2687214cd6ca026.jpg",
     "static/media/hero-light.jpg": "/site/static/media/hero-light.f60ed2687214cd6ca026.jpg",
     "static/media/logo.svg": "/site/static/media/logo.725a1a671fe87983db993c900aa1aaca.svg",
+    "static/media/photo.jpeg": "/site/static/media/photo.918e8775e5ecb865595f.jpeg",
+    "static/media/smartopt-logo.jpg": "/site/static/media/smartopt-logo.2ebc041a5cf31f0d9e91.jpg",
     "service-worker.js": "/site/service-worker.js",
+    "static/media/koc.jpg": "/site/static/media/koc.5f8274c1f615dc01a674.jpg",
     "static/media/GH.svg": "/site/static/media/GH.b9e9a9aa6f05e9dfe5dcb8991bda3e4d.svg",
     "index.html": "/site/index.html",
     "main.deb5c223.css.map": "/site/static/css/main.deb5c223.css.map",
-    "main.3476772c.js.map": "/site/static/js/main.3476772c.js.map"
+    "main.48542bfe.js.map": "/site/static/js/main.48542bfe.js.map"
   },
   "entrypoints": [
     "static/css/main.deb5c223.css",
-    "static/js/main.3476772c.js"
+    "static/js/main.48542bfe.js"
   ]
 }
