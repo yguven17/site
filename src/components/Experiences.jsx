@@ -42,7 +42,7 @@ export default function Experiences() {
           <Row className="align-items-center mt-5">
             <Col className="d-flex flex-column text-center">
               <Container>
-                <pb>SmartOpt, Part-time Working Student</pb>
+                <pb>SmartOpt, Back End Developer</pb>
                 <br />
                 <br />
                 <pd>04/2023 &ndash; present İstanbul, T&uuml;rkiye</pd>
