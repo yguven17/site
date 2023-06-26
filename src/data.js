@@ -40,7 +40,7 @@ export const Blog = <FaLinkedin />;
   Add a second paragraph for the about me section.
 */
 export const moreInfo =
-  "As a fourth-year computer & electrical and electronic engineering student, I possess a strong foundation in programming languages, algorithms, computer networks, software engineering, and database management. With practical experience gained from internships and personal projects, I excel at applying theoretical concepts to real-world problems. Highly motivated with excellent problem-solving and communication skills, I am eager to apply my knowledge to a career in computer engineering. ";
+  "As a graduate in computer and electrical engineering, I have a strong foundation in programming languages, algorithms, computer networks, software engineering, and database management. Through internships and personal projects, I have gained practical experience in applying theoretical concepts to real-world problems. With excellent problem-solving and communication skills, I am highly motivated to pursue a career in computer engineering, particularly focusing on software and backend development.";
 
 /* Skills
  ************************************************************** 
@@ -110,7 +110,7 @@ export const skillData = [
 ];
 
 // Resume link (string - "https://YourResumeUrl") - I am using CloudFront to share my resume (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)
-export const resume = "https://drive.google.com/file/d/1Goqiu9CZT3hfyT9tuQLgjfd8zcU6og_o/view?usp=sharing";
+export const resume = "https://drive.google.com/file/d/1RzEh6hH3yHaQ7SnXj6Y_EQ9n0kI88P1n/view?usp=sharing";
 
 /* Projects
  ************************************************************** 

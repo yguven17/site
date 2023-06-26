@@ -64,17 +64,7 @@ export default function NavBar() {
                   About Me
                 </Link>
               </Nav.Item>
-              <Nav.Item>
-                <Link
-                  to={"Education"}
-                  spy={true}
-                  activeClass="active"
-                  className="nav-link"
-                  onClick={closeExpanded}
-                >
-                  Education
-                </Link>
-              </Nav.Item>
+              
               <Nav.Item>
                 <Link
                   to={"Experineces"}
@@ -86,6 +76,19 @@ export default function NavBar() {
                   Experineces
                 </Link>
               </Nav.Item>
+
+              <Nav.Item>
+                <Link
+                  to={"Education"}
+                  spy={true}
+                  activeClass="active"
+                  className="nav-link"
+                  onClick={closeExpanded}
+                >
+                  Education
+                </Link>
+              </Nav.Item>
+
               <Nav.Item>
                 <Link
                   to={"Skills"}
@@ -97,6 +100,7 @@ export default function NavBar() {
                   Skills
                 </Link>
               </Nav.Item>
+
               <Nav.Item>
                 <Link
                   to={"Projects"}
@@ -108,6 +112,7 @@ export default function NavBar() {
                   Projects
                 </Link>
               </Nav.Item>
+
               <Nav.Item>
                 <Link
                   to={"Contact"}

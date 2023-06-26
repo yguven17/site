@@ -32,8 +32,8 @@ export default function Home() {
       </Element>
       <main>
         <AboutMe />
-        <Education />
         <Experiences />
+        <Education />
         <Skills />
         <Projects />
         <Contact />
