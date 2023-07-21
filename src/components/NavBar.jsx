@@ -18,8 +18,8 @@ export default function NavBar() {
         collapseOnSelect={true}
         expand="lg"
         expanded={isExpanded}
-        bg={theme === "light" ? "light" : "dark"}
-        variant={theme === "light" ? "light" : "dark"}
+        bg={theme === "light" ? "dark" : "dark"}
+        variant={theme === "light" ? "dark" : "dark"}
         fixed="top"
       >
         <Container>
