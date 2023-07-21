@@ -42,7 +42,7 @@ export default function App() {
   React.useEffect(
     function () {
       const updateTheme = () =>
-        darkMode ? setTheme("dark") : setTheme("light");
+        darkMode ? setTheme("dark") : setTheme("dark");
       updateTheme();
       dispatch(fetchGitHubInfo());
       dispatch(fetchGitHubReops());
@@ -53,7 +53,7 @@ export default function App() {
   window
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", (e) =>
-      e.matches ? setTheme("dark") : setTheme("light")
+      e.matches ? setTheme("dark") : setTheme("dark")
     );
 
   if (isLoading) {
