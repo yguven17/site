@@ -3,12 +3,12 @@ import { useAppContext } from "../appContext";
 import { Link } from "react-scroll";
 // Components
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { FixedNavSpacer, ToggleSwitch } from "./globalStyledComponents";
+import { FixedNavSpacer } from "./globalStyledComponents";
 // Images
 import Logo from "../images/logo.svg";
 
 export default function NavBar() {
-  const { theme, isExpanded, closeExpanded, toggleExpanded } = useAppContext();
+  const { isExpanded, closeExpanded, toggleExpanded } = useAppContext();
 
   return (
     <>
@@ -18,8 +18,7 @@ export default function NavBar() {
         collapseOnSelect={true}
         expand="lg"
         expanded={isExpanded}
-        bg={theme === "light" ? "dark" : "dark"}
-        variant={theme === "light" ? "dark" : "dark"}
+        variant="dark"
         fixed="top"
       >
         <Container>
@@ -29,11 +28,7 @@ export default function NavBar() {
               src={Logo}
               width="35"
               height="35"
-              className={
-                theme === "light"
-                  ? "bg-dark rounded-circle"
-                  : "bg-light rounded-circle"
-              }
+              className="bg-light rounded-circle"
             />
           </Navbar.Brand>
           <Navbar.Toggle
@@ -67,13 +62,13 @@ export default function NavBar() {
               
               <Nav.Item>
                 <Link
-                  to={"Experineces"}
+                  to={"Experiences"}
                   spy={true}
                   activeClass="active"
                   className="nav-link"
                   onClick={closeExpanded}
                 >
-                  Experineces
+                  Experiences
                 </Link>
               </Nav.Item>
 
@@ -124,9 +119,6 @@ export default function NavBar() {
                   Contact
                 </Link>
               </Nav.Item>
-            </Nav>
-            <Nav>
-              <ToggleSwitch />
             </Nav>
           </Navbar.Collapse>
         </Container>

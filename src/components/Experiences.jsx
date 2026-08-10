@@ -7,18 +7,19 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Title } from "./globalStyledComponents";
 import company from "../images/smartopt-logo.jpg";
 
-const StyledExperineces = styled.section`
+const StyledExperiences = styled.section`
   p {
     font-size: 1.15rem;
     text-align: left;
   }
-  pb {
+  .role {
     font-size: 1.5rem;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     font-family: "Permanent Marker";
+    margin-top: 2rem;
   }
-  pd {
+  .period {
     font-size: 1.25rem;
     text-align: center;
   }
@@ -30,8 +31,8 @@ const StyledExperineces = styled.section`
 
 export default function Experiences() {
   return (
-    <Element name={"Experineces"} id="experineces">
-      <StyledExperineces className="section">
+    <Element name={"Experiences"} id="experiences">
+      <StyledExperiences className="section">
         <Container>
           <Container className="d-flex">
             <Title>
@@ -42,60 +43,79 @@ export default function Experiences() {
           <Row className="align-items-center mt-5">
             <Col className="d-flex flex-column text-center">
               <Container>
-                <pb>SmartOpt, Back End Developer</pb>
-                <br />
-                <br />
-                <pd>04/2023 &ndash; present İstanbul, T&uuml;rkiye</pd>
+                <h3 className="role">
+                  SmartOpt, Backend Developer &amp; Systems Engineer
+                </h3>
+                <p className="period">
+                  04/2023 &ndash; present İstanbul, T&uuml;rkiye
+                </p>
                 <p>
-                  &bull;Python Developer
+                  &bull;Design, develop, and operate Python/Django backend
+                  services, REST APIs, and data pipelines for enterprise
+                  optimization, forecasting, and AI platforms deployed across
+                  AWS, GCP, Hetzner, and on-premise environments.
                   <br />
-                  &bull;Django Developer
+                  &bull;BSH Container Yard: built and maintained a
+                  container-tracking backend integrating multiple third-party
+                  APIs and supporting tens of thousands of import/export
+                  transactions daily; owned backend development, deployment, and
+                  production maintenance.
+                  <br />
+                  &bull;TOFA&#350; EMDHO: developed an autonomous closed-loop
+                  system that ingests OPC/SCADA data into a machine-learning
+                  pipeline and writes model outputs back to operational tags
+                  using Django and Docker.
+                  <br />
+                  &bull;&#350;i&#351;ecam TDI: implemented the backend and DevOps
+                  foundation for a scenario-based AI prediction platform,
+                  reliably processing historical and future scenario inputs and
+                  outputs.
+                  <br />
+                  &bull;EnergyOpt EPF: engineered multi-source data pipelines for
+                  daily, weekly, and annual electricity-price forecasting and
+                  ensured consistent model execution across local and cloud
+                  environments.
+                  <br />
+                  &bull;BSH PlanOpt and EU projects: integrated ASP, PLC, and
+                  SCADA data sources; built preprocessing and model-execution
+                  services; supported production operations for planning,
+                  mobility, and sustainability platforms.
                 </p>
 
-                <pb>Siemens, Part-time Working Student</pb>
-                <br />
-                <br />
-                <pd>01/2023 &ndash; 04/2023 İstanbul, T&uuml;rkiye</pd>
+                <h3 className="role">
+                  Siemens, Part-time Working Student &ndash; DevOps
+                </h3>
+                <p className="period">
+                  01/2023 &ndash; 04/2023 İstanbul, T&uuml;rkiye
+                </p>
                 <p>
-                  &bull;DevOps
+                  &bull;Monitored development and test environments, followed
+                  deployment health, and supported ongoing development
+                  operations.
                   <br />
-                  &bull;Configuration Management
+                  &bull;Provisioned virtual machines and configured Jenkins and
+                  Docker environments for new and existing projects.
                   <br />
-                  &bull;Installing virtual machines and setting up Jenkins,
-                  Docker tasks
+                  &bull;Supported configuration management and environment
+                  readiness across project teams.
                 </p>
 
-                <pb>
-                  Schneider Electric, System Software Architecture Engineer Part
-                  Timer
-                </pb>
-                <br />
-                <br />
-                <pd>01/2022 &ndash; 01/2023 İstanbul, T&uuml;rkiye</pd>
-                <p>
-                  &bull;System Architecture (AVEVA software's, project
-                  interfaces and necessary data and simulations for the project)
-                  (4 months)
-                  <br />
-                  &bull;IT (error analysis and reporting systems and application
-                  development, Project construction with Python, working with
-                  shell) (1 month)
-                  <br />
-                  &bull;Industry Sales Team (sales of products analysis and
-                  systems to companies, Python coding to streamline sales
-                  processes) (1 month)
-                  <br />
-                  &bull;PLC and SCADA Systems (system examination, software and
-                  setup) (4 months)
+                <h3 className="role">
+                  Schneider Electric, System Software Architecture Engineer
+                  &ndash; Part-time
+                </h3>
+                <p className="period">
+                  01/2022 &ndash; 01/2023 İstanbul, T&uuml;rkiye
                 </p>
-
-                <pb>Siemens, Intern</pb>
-                <br />
-                <br />
-                <pd>06/2021 &ndash; 07/2021 İstanbul, T&uuml;rkiye</pd>
                 <p>
-                  &bull;PLC and SCADA (to examine automation systems and monitor
-                  errors in the system)
+                  &bull;Supported system architecture and project interfaces
+                  using AVEVA software, simulations, and industrial data.
+                  <br />
+                  &bull;Developed Python and shell-based tooling for error
+                  analysis, reporting, and application workflows.
+                  <br />
+                  &bull;Worked with PLC and SCADA systems, including software
+                  setup, system analysis, and integration.
                 </p>
               </Container>
             </Col>
@@ -110,7 +130,7 @@ export default function Experiences() {
             </Col>
           </Row>
         </Container>
-      </StyledExperineces>
+      </StyledExperiences>
     </Element>
   );
 }

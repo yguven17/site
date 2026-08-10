@@ -22,11 +22,19 @@ export default function SocialLinks() {
         href={html_url}
         aria-label="Check out my GitHub profile."
         className="link-icons"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <FaGithub />
       </a>
       {blog && (
-        <a href={blog} aria-label="External link" className="link-icons">
+        <a
+          href={blog}
+          aria-label="External link"
+          className="link-icons"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {Blog}
         </a>
       )}

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // Data
-import { githubUsername, projectCardImages } from "../data";
+import { githubUsername } from "../data";
 
 const initialState = {
   error: "",
@@ -42,13 +42,6 @@ export const allProjectsSlice = createSlice({
       .addCase(fetchGitHubReops.fulfilled, (state, action) => {
         state.isLoading = false;
         state.data = action.payload;
-        projectCardImages.forEach(function (element) {
-          state.data.forEach((el, i) => {
-            if (element.name.toLowerCase() === el.name.toLowerCase()) {
-              el.image = element.image;
-            }
-          });
-        });
       })
       .addCase(fetchGitHubReops.rejected, (state, action) => {
         state.isLoading = false;

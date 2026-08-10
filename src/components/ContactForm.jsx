@@ -1,5 +1,4 @@
 import React from "react";
-import { useAppContext } from "../appContext";
 // Data
 import { formspreeUrl } from "../data";
 // Components
@@ -11,7 +10,6 @@ export default function ContactForm() {
   const [success, setSuccess] = React.useState(false);
   const [danger, setDanger] = React.useState(false);
   const [dangerMessage, setDangerMessage] = React.useState(null);
-  const { theme } = useAppContext();
 
   async function postData(data) {
     const response = await fetch(formspreeUrl, {
@@ -80,6 +78,7 @@ export default function ContactForm() {
           <Form.Label>Email address</Form.Label>
           <Form.Control
             required
+            type="email"
             pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
             placeholder="someone@something.com"
           />
@@ -98,7 +97,7 @@ export default function ContactForm() {
           {formspreeUrl && (
             <Button
               size="lg"
-              variant={theme === "light" ? "outline-dark" : "outline-light"}
+              variant="outline-light"
               type="submit"
               disabled={isProcessing}
               className="my-4"

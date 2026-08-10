@@ -1,5 +1,4 @@
 import React from "react";
-import { useAppContext } from "../appContext";
 import { useSelector } from "react-redux";
 import { selectData as homeData } from "../pages/homeSlice";
 import { selectData, selectError, selectIsLoading } from "./allProjectsSlice";
@@ -32,10 +31,6 @@ const StyledSection = styled.section`
     max-width: 90vw;
   }
 
-  .row {
-    min-height: var(--card-height);
-  }
-
   @media screen and (min-width: 800px) {
     .input-group {
       width: 75%;
@@ -48,7 +43,6 @@ export default function AllProjects() {
   const [filteredResults, setFilteredResults] = React.useState([]);
   const [pageItems, setPageItems] = React.useState([]);
   const [activePage, setActivePage] = React.useState(1);
-  const { theme } = useAppContext();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const data = useSelector(selectData);
@@ -63,58 +57,31 @@ export default function AllProjects() {
 
   React.useEffect(
     function () {
-      if (searchInput !== "") {
-        const filteredData = data.filter((item) => {
-          return item.name.toLowerCase().includes(searchInput.toLowerCase());
-        });
-        const tempPageItems = [];
-        for (
-          let number = 1;
-          number <= Math.ceil(filteredData.length / 6);
-          number++
-        ) {
-          tempPageItems.push(
-            <Pagination.Item
-              key={number}
-              active={number === activePage}
-              onClick={() => setActivePage(number)}
-            >
-              {number}
-            </Pagination.Item>
-          );
-          setPageItems([...tempPageItems]);
-        }
-        if (activePage === 1) {
-          setFilteredResults(filteredData.slice(0, 6));
-        } else {
-          setFilteredResults(
-            filteredData.slice((activePage - 1) * 6, (activePage - 1) * 6 + 6)
-          );
-        }
-      } else {
-        const tempPageItems = [];
-        for (let number = 1; number <= Math.ceil(data.length / 6); number++) {
-          tempPageItems.push(
-            <Pagination.Item
-              key={number}
-              active={number === activePage}
-              onClick={() => setActivePage(number)}
-            >
-              {number}
-            </Pagination.Item>
-          );
-          setPageItems([...tempPageItems]);
-        }
-        if (activePage === 1) {
-          setFilteredResults(data.slice(0, 6));
-        } else {
-          setFilteredResults(
-            data.slice((activePage - 1) * 6, (activePage - 1) * 6 + 6)
-          );
-        }
+      const matches =
+        searchInput === ""
+          ? data
+          : data.filter((item) =>
+              item.name.toLowerCase().includes(searchInput.toLowerCase())
+            );
+
+      const tempPageItems = [];
+      for (let number = 1; number <= Math.ceil(matches.length / 6); number++) {
+        tempPageItems.push(
+          <Pagination.Item
+            key={number}
+            active={number === activePage}
+            onClick={() => setActivePage(number)}
+          >
+            {number}
+          </Pagination.Item>
+        );
       }
+      setPageItems(tempPageItems);
+
+      const start = (activePage - 1) * 6;
+      setFilteredResults(matches.slice(start, start + 6));
     },
-    [searchInput, data, pageItems.length, activePage]
+    [searchInput, data, activePage]
   );
 
   React.useEffect(
@@ -199,45 +166,21 @@ export default function AllProjects() {
                 lg={3}
                 className="g-4 justify-content-center row"
               >
-                {searchInput.length > 0
-                  ? filteredResults.map(function ({
-                      id,
-                      image,
-                      name,
-                      description,
-                      html_url,
-                    }) {
-                      return (
-                        <Col key={id}>
-                          <StyledCard
-                            theme={theme}
-                            image={image}
-                            name={name}
-                            description={description}
-                            url={html_url}
-                          />
-                        </Col>
-                      );
-                    })
-                  : filteredResults.map(function ({
-                      id,
-                      image,
-                      name,
-                      description,
-                      html_url,
-                    }) {
-                      return (
-                        <Col key={id}>
-                          <StyledCard
-                            theme={theme}
-                            image={image}
-                            name={name}
-                            description={description}
-                            url={html_url}
-                          />
-                        </Col>
-                      );
-                    })}
+                {filteredResults.map(function (repo) {
+                  return (
+                    <Col key={repo.id}>
+                      <StyledCard
+                        name={repo.name}
+                        description={repo.description}
+                        url={repo.html_url}
+                        language={repo.language}
+                        stars={repo.stargazers_count}
+                        forks={repo.forks_count}
+                        updatedAt={repo.pushed_at}
+                      />
+                    </Col>
+                  );
+                })}
               </Row>
               <Container className="d-flex justify-content-center mt-4">
                 {pageItems.length <= 2 ? (
@@ -253,13 +196,16 @@ export default function AllProjects() {
                           : setActivePage(activePage - 1)
                       }
                     />
-                    {pageItems[0]}
-                    <Pagination.Ellipsis />
+                    {activePage > 1 && pageItems[0]}
+                    {activePage > 2 && <Pagination.Ellipsis disabled />}
                     <Pagination.Item active={true}>
                       {activePage}
                     </Pagination.Item>
-                    <Pagination.Ellipsis />
-                    {pageItems[pageItems.length - 1]}
+                    {activePage < pageItems.length - 1 && (
+                      <Pagination.Ellipsis disabled />
+                    )}
+                    {activePage < pageItems.length &&
+                      pageItems[pageItems.length - 1]}
                     <Pagination.Next
                       onClick={() =>
                         activePage === pageItems.length

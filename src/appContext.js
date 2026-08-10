@@ -3,10 +3,7 @@ import React from "react";
 const AppContext = React.createContext();
 
 const AppProvider = function ({ children }) {
-  const [theme, setTheme] = React.useState("light");
   const [isExpanded, setExpanded] = React.useState(false);
-
-  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
   const toggleExpanded = () => setExpanded((prevState) => !prevState);
 
@@ -19,9 +16,6 @@ const AppProvider = function ({ children }) {
   return (
     <AppContext.Provider
       value={{
-        theme,
-        setTheme,
-        toggleTheme,
         isExpanded,
         toggleExpanded,
         closeExpanded,

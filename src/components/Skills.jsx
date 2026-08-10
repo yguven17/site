@@ -1,47 +1,82 @@
-import { useAppContext } from "../appContext";
 import { Element } from "react-scroll";
+import styled from "styled-components";
 // Data
-import { skillData, resume } from "../data";
+import { skillGroups, resume } from "../data";
 // Components
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Title } from "./globalStyledComponents";
 
-export default function Skills() {
-  const { theme } = useAppContext();
+const StyledSkills = styled.section`
+  .skill-group {
+    border-top: 1px solid rgba(97, 219, 251, 0.25);
+    padding-top: 1rem;
+    height: 100%;
+  }
 
+  .skill-group-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.85rem;
+  }
+
+  .skill-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-list li {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid rgba(251, 253, 255, 0.16);
+    border-radius: 2rem;
+    white-space: nowrap;
+  }
+`;
+
+export default function Skills() {
   return (
     <Element name={"Skills"} id="skills">
-      <section className="section">
-        <Container className="text-center">
-          <Title>
-            <h2>Skills</h2>
-            <div className="underline"></div>
-          </Title>
-          <Row className="mt-4 align-items-center">
-            {skillData.map((skills) => {
-              return (
-                <Col xs={2} key={skills.id} className="my-md-5">
-                  <figure>
-                    {skills.skill}
-                    <figcaption>{skills.name}</figcaption>
-                  </figure>
-                </Col>
-              );
-            })}
+      <StyledSkills className="section">
+        <Container>
+          <Container className="d-flex">
+            <Title>
+              <h2>Skills</h2>
+              <div className="underline"></div>
+            </Title>
+          </Container>
+          <Row xs={1} md={2} className="g-4 g-md-5 mt-1">
+            {skillGroups.map((group) => (
+              <Col key={group.id}>
+                <div className="skill-group">
+                  <h3 className="skill-group-label">{group.label}</h3>
+                  <ul className="skill-list">
+                    {group.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </Col>
+            ))}
           </Row>
           {resume && (
-            <a href={resume}>
-              <Button
-                size="lg"
-                variant={theme === "light" ? "outline-dark" : "outline-light"}
-                className="mt-5"
-              >
-                Resume
-              </Button>
-            </a>
+            <Container className="text-center">
+              <a href={resume} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline-light" className="mt-5">
+                  Resume
+                </Button>
+              </a>
+            </Container>
           )}
         </Container>
-      </section>
+      </StyledSkills>
     </Element>
   );
 }

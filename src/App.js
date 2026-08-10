@@ -1,5 +1,4 @@
 import React from "react";
-import { useAppContext } from "./appContext";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchGitHubInfo,
@@ -7,7 +6,7 @@ import {
   selectIsLoading,
 } from "./pages/homeSlice";
 import { fetchGitHubReops } from "./pages/allProjectsSlice";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 // Components
 import { Container } from "react-bootstrap";
@@ -19,46 +18,28 @@ import Home from "./pages/Home";
 import AllProjects from "./pages/AllProjects";
 import NotFound from "./pages/NotFound";
 
-const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-const themes = {
-  light: {
-    name: "light",
-    color: "#FBFDFF",
-    background: "#27272A",
-  },
-  dark: {
-    name: "dark",
-    color: "#FBFDFF",
-    background: "#27272A",
-  },
+const theme = {
+  name: "dark",
+  color: "#FBFDFF",
+  background: "#27272A",
 };
 
 export default function App() {
-  const { theme, setTheme } = useAppContext();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   React.useEffect(
     function () {
-      const updateTheme = () =>
-        darkMode ? setTheme("dark") : setTheme("dark");
-      updateTheme();
       dispatch(fetchGitHubInfo());
       dispatch(fetchGitHubReops());
     },
-    [setTheme, dispatch]
+    [dispatch]
   );
-
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) =>
-      e.matches ? setTheme("dark") : setTheme("dark")
-    );
 
   if (isLoading) {
     return (
-      <ThemeProvider theme={themes[theme]}>
+      <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Container className="d-flex vh-100 align-items-center">
           <Loading />
@@ -67,7 +48,7 @@ export default function App() {
     );
   } else if (error) {
     return (
-      <ThemeProvider theme={themes[theme]}>
+      <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Container className="d-flex vh-100 align-items-center justify-content-center">
           <h2>{error}</h2>
@@ -76,17 +57,17 @@ export default function App() {
     );
   } else {
     return (
-      <HashRouter>
-        <ThemeProvider theme={themes[theme]}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <ThemeProvider theme={theme}>
           <ScrollToTop />
           <GlobalStyles />
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/All-Projects" element={<AllProjects />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </ThemeProvider>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

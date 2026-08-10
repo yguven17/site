@@ -23,3 +23,21 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Secrets
+.env
+.env.*.local
+
+# Local agent tooling (Claude Code / Ruflo) - developer workflow, not part of the site
+.claude/
+.claude-flow/
+.agents/
+.mcp.json
+CLAUDE.md
+.swarm/
+ruvector.db
+ruvector.db-shm
+ruvector.db-wal
+
+# Browser automation output
+.playwright-mcp/

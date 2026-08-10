@@ -3,13 +3,13 @@ import { useAppContext } from "../appContext";
 import { Link, useLocation } from "react-router-dom";
 // Components
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { ToggleSwitch, FixedNavSpacer } from "./globalStyledComponents";
+import { FixedNavSpacer } from "./globalStyledComponents";
 // Images
 import Logo from "../images/logo.svg";
 
 export default function SecondaryNavBar() {
   const { pathname } = useLocation();
-  const { theme, isExpanded, toggleExpanded } = useAppContext();
+  const { isExpanded, toggleExpanded } = useAppContext();
 
   return (
     <>
@@ -19,8 +19,7 @@ export default function SecondaryNavBar() {
         collapseOnSelect={true}
         expand="lg"
         expanded={isExpanded}
-        bg={theme === "light" ? "white" : "dark"}
-        variant={theme === "light" ? "light" : "dark"}
+        variant="dark"
         fixed="top"
       >
         <Container>
@@ -30,11 +29,7 @@ export default function SecondaryNavBar() {
               src={Logo}
               width="35"
               height="35"
-              className={
-                theme === "light"
-                  ? "bg-dark rounded-circle"
-                  : "bg-light rounded-circle"
-              }
+              className="bg-light rounded-circle"
             />
           </Navbar.Brand>
           <Navbar.Toggle
@@ -65,9 +60,6 @@ export default function SecondaryNavBar() {
                   All Projects
                 </Link>
               </Nav.Item>
-            </Nav>
-            <Nav>
-              <ToggleSwitch />
             </Nav>
           </Navbar.Collapse>
         </Container>

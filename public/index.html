@@ -5,24 +5,28 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta property="og:title" content="My GitHub Portfolio" />
+    <meta
+      name="description"
+      content="Yakup Enes Güven — Backend Developer with 3+ years of experience building Python/Django REST services, data pipelines, and cloud-hosted platforms on AWS, GCP, and self-hosted infrastructure."
+    />
+    <meta
+      property="og:title"
+      content="Yakup Enes Güven | Backend Developer"
+    />
     <meta property="og:type" content="website" />
     <meta
       property="og:description"
-      content="Built with React and the GitHub REST API."
+      content="Backend Developer with 3+ years of experience building Python/Django REST services, data pipelines, and cloud-hosted platforms on AWS, GCP, and self-hosted infrastructure."
     />
     <!-- Add an image for social media - https://css-tricks.com/essential-meta-tags-social-media/ -->
     <meta
       property="og:image"
-      content="https://YourUsername.github.io/your-app/GH.png"
+      content="https://yguven17.github.io/site/GH.png"
     />
-    <meta
-      property="og:url"
-      content="https://YourUsername.github.io/your-app/"
-    />
+    <meta property="og:url" content="https://yguven17.github.io/site/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image:alt" content="React and GitHub" />
-    <meta property="og:site_name" content="GitHub Portfolio" />
+    <meta property="og:site_name" content="Yakup Enes Güven" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/space_middle.png" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,7 +49,26 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Yakup Enes Güven | Portfolio</title>
+    <!-- Decodes the path that 404.html encoded, so deep links work on GitHub Pages. -->
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

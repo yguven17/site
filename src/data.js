@@ -1,29 +1,8 @@
-// Skills icons - https://react-icons.github.io/react-icons/
-import {
-  FaJava,
-  FaPython,
-  FaLinux,
-  FaGitAlt,
-  FaGithubSquare,
-  
-  FaUbuntu,
-  FaLinkedin
-} from "react-icons/fa";
-import { DiDjango,  DiTerminal, DiRasberryPi, DiMysql } from "react-icons/di";
-import { SiArduino } from "react-icons/si";
-import { Icon } from '@iconify/react';
+import { FaLinkedin } from "react-icons/fa";
 
-// Projects Images (add your images to the images directory and import below)
-import Logo from "./images/logo.svg";
-import me from "./images/photo.jpeg";
-import education from "./images/koc.jpg";
-import company from "./images/koc.jpg";
-
-// Hero Images (add your images to the /images directory with the same names)
-import HeroLight from "./images/hero-light.jpg";
+// Hero Image (add your image to the /images directory with the same name)
 import HeroDark from "./images/hero-dark.jpg";
-// If you change the import names above then you need to change the export names below
-export { HeroLight as Light };
+// If you change the import name above then you need to change the export name below
 export { HeroDark as Dark };
 
 /* START HERE
@@ -40,93 +19,86 @@ export const Blog = <FaLinkedin />;
   Add a second paragraph for the about me section.
 */
 export const moreInfo =
-  "As a graduate in computer and electrical engineering, I have a strong foundation in programming languages, algorithms, computer networks, software engineering, and database management. Through internships and personal projects, I have gained practical experience in applying theoretical concepts to real-world problems. With excellent problem-solving and communication skills, I am highly motivated to pursue a career in computer engineering, particularly focusing on software and backend development.";
+  "Backend Developer with 3+ years of full-time experience and 4+ years across backend, systems, and industrial software engineering. I design and operate Python/Django REST services, data pipelines, and cloud-hosted platforms for enterprise and industrial use cases, working hands-on with SQL databases, Redis, Kafka, Docker, AWS, GCP, and self-hosted infrastructure. I have built integrations and backend systems supporting tens of thousands of daily transactions, connecting APIs, optimization and machine-learning models, and OPC, PLC, and SCADA environments.";
 
 /* Skills
- ************************************************************** 
-  Add or remove skills in the SAME format below, there must be one icon imported above per skill below.
+ **************************************************************
+  Grouped the same way as the CV so the site and the CV stay in sync.
 */
-export const skillData = [
+export const skillGroups = [
   {
-    id: 1,
-    skill: <FaJava className="display-4" />,
-    name: "Java",
+    id: "backend",
+    label: "Backend",
+    items: [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "REST API design",
+      "Java",
+      "Spring Boot",
+    ],
   },
   {
-    id: 2,
-    skill: <FaPython className="display-4" />,
-    name: "Python",
+    id: "data",
+    label: "Data & Messaging",
+    items: [
+      "PostgreSQL",
+      "MySQL",
+      "Microsoft SQL Server",
+      "Redis",
+      "Kafka",
+      "Airflow",
+    ],
   },
   {
-    id: 3,
-    skill: <DiDjango className="display-4" />,
-    name: "Django",
+    id: "cloud",
+    label: "Cloud & DevOps",
+    items: [
+      "Docker",
+      "AWS (EC2, S3, Route 53)",
+      "GCP (Compute Engine, Cloud Storage)",
+      "Hetzner",
+      "Linux / Ubuntu",
+      "Jenkins",
+      "Git / GitHub",
+    ],
   },
   {
-    id: 4,
-    skill: <FaLinux className="display-4" />,
-    name: "Linux",
-  },
-  {
-    id: 5,
-    skill: <FaGitAlt className="display-4" />,
-    name: "Git",
-  },
-  {
-    id: 6,
-    skill: <FaGithubSquare className="display-4" />,
-    name: "GitHub",
-  },
-  {
-    id: 7,
-    skill: <FaUbuntu className="display-4" />,
-    name: "Ubuntu",
-  },
-  {
-    id: 8,
-    skill: <DiTerminal className="display-4" />,
-    name: "Terminal",
-  },
-  {
-    id: 9,
-    skill: <DiMysql className="display-4" />,
-    name: "MySQL",
-  },
-  {
-    id: 10,
-    skill: <DiRasberryPi className="display-4" />,
-    name: "RasberryPi",
-  },
-  {
-    id: 11,
-    skill: <SiArduino className="display-4" />,
-    name: "Arduino",
-  },
-  {
-    id: 12,
-    skill: <Icon icon="file-icons:matlab" className="display-4" />,
-    name: "Matlab",
+    id: "platforms",
+    label: "Platforms & Integration",
+    items: [
+      "Distributed backend services",
+      "Third-party APIs",
+      "MinIO",
+      "Keycloak",
+      "OPC",
+      "PLC",
+      "SCADA",
+    ],
   },
 ];
 
-// Resume link (string - "https://YourResumeUrl") - I am using CloudFront to share my resume (https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)
-export const resume = "https://drive.google.com/file/d/1RzEh6hH3yHaQ7SnXj6Y_EQ9n0kI88P1n/view?usp=sharing";
+// Resume link - served from the /public folder so it ships with the site
+export const resume = `${process.env.PUBLIC_URL}/Yakup_Enes_Guven_CV.pdf`;
 
 /* Projects
  ************************************************************** 
   List the repo names (string - "your-repo-name") you want to include (they will be sorted alphabetically). If empty, only the first 3 will be included.
 */
-export const filteredProjects = ["example-1", "example-2", "example-3"];
+export const filteredProjects = [
+  "Row-Match-Rest-API",
+  "ngnix-docker-test-project",
+  "Mini-File-System",
+];
 
-// Replace the defualt GitHub image for matching repos below (images imported above - lines 13-14)
-export const projectCardImages = [
+/* Projects that do not live on GitHub. These are shown before the repos pulled
+   from the API. Omit `html_url` to hide the card's link. */
+export const extraProjects = [
   {
-    name: "example-1",
-    image: Logo,
-    image1: me,
-    image2: education,
-    image3: company,
-
+    id: "duzelt-beni",
+    name: "Düzelt Beni",
+    description:
+      "Django / Django REST Framework application for Turkish natural language processing, exposing text-correction endpoints over a REST API.",
   },
 ];
 

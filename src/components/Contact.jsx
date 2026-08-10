@@ -7,8 +7,7 @@ import { Title } from "./globalStyledComponents";
 import ContactForm from "./ContactForm";
 
 const StyledSection = styled.section`
-  min-height: 89vh;
-  padding-top: var(--nav-height);
+  padding: clamp(3.5rem, 9vw, 7rem) 0;
 `;
 
 export default function Contact() {

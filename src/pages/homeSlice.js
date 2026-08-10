@@ -5,7 +5,7 @@ import { githubUsername } from "../data";
 const initialState = {
   isLoading: true,
   error: "",
-  data: [],
+  data: {},
 };
 
 export const url = `https://api.github.com/users/${githubUsername}`;

@@ -12,13 +12,14 @@ const StyledEducation = styled.section`
     font-size: 1.15rem;
     text-align: center;
   }
-  pb {
+  .school {
     font-size: 1.5rem;
     text-align: center;
     font-weight: bold;
     font-family: "Permanent Marker";
+    margin-top: 2rem;
   }
-  pd {
+  .period {
     font-size: 1.25rem;
     text-align: center;
   }
@@ -44,28 +45,35 @@ export default function Education() {
           <Row className="align-items-center mt-5">
             <Col className="d-flex flex-column text-center">
               <Container>
-                <br />
-                <br />
-                <pb>Koç University</pb>
-                <br />
-                <br />
-                <p>Computer Enginnering (Double Major)</p>
-                <pd>01/2021 &ndash; 06/2023 İstanbul, T&uuml;rkiye</pd>
+                <h3 className="school">Koç University</h3>
+                <p>
+                  B.Sc. Computer Engineering (Double Major) &ndash; Full
+                  Scholarship
+                </p>
+                <p className="period">
+                  01/2021 &ndash; 06/2023 İstanbul, T&uuml;rkiye
+                </p>
 
-                <br />
-                <br />
-                <pb>Koç University</pb>
-                <br />
-                <br />
-                <p>Electrical and Electronics Enginnering</p>
-                <pd>08/2017 &ndash; 06/2023 İstanbul, T&uuml;rkiye</pd>
+                <h3 className="school">Koç University</h3>
+                <p>
+                  B.Sc. Electrical and Electronics Engineering &ndash; Full
+                  Scholarship
+                </p>
+                <p className="period">
+                  08/2017 &ndash; 06/2023 İstanbul, T&uuml;rkiye
+                </p>
 
-                <br />
-                <br />
-                <pb>Kars Fen Lisesi</pb>
-                <br />
-                <br />
-                <pd>09/2013 &ndash; 06/2017 Kars, T&uuml;rkiye</pd>
+                <h3 className="school">Kars Fen Lisesi</h3>
+                <p className="period">
+                  09/2013 &ndash; 06/2017 Kars, T&uuml;rkiye
+                </p>
+
+                <h3 className="school">Honors &amp; Languages</h3>
+                <p>
+                  Vehbi Koç Scholar (3 times); Koç University Anatolian
+                  Scholarship Program
+                </p>
+                <p className="period">Languages: Turkish, English</p>
               </Container>
             </Col>
             <Col className="d-none d-md-block text-center">
