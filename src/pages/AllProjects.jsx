@@ -28,13 +28,7 @@ const StyledSection = styled.section`
   min-height: calc(100vh - var(--min-footer-height) - var(--nav-height));
 
   .input-group {
-    max-width: 90vw;
-  }
-
-  @media screen and (min-width: 800px) {
-    .input-group {
-      width: 75%;
-    }
+    max-width: 26rem;
   }
 `;
 
@@ -98,14 +92,12 @@ export default function AllProjects() {
         <SecondaryNavBar />
         <main>
           <StyledSection className="d-flex flex-column justify-content-center">
-            <Container className="d-flex">
-              <Title>
-                <h2>
-                  All <FaGithub /> Projects
-                </h2>
-                <div className="underline"></div>
-              </Title>
-            </Container>
+            <Title>
+              <h2>
+                All <FaGithub /> Projects
+              </h2>
+              <div className="underline"></div>
+            </Title>
             <Loading />
           </StyledSection>
         </main>
@@ -118,14 +110,12 @@ export default function AllProjects() {
         <SecondaryNavBar />
         <main>
           <StyledSection className="d-flex flex-column justify-content-center">
-            <Container className="d-flex">
-              <Title>
-                <h2>
-                  All <FaGithub /> Projects
-                </h2>
-                <div className="underline"></div>
-              </Title>
-            </Container>
+            <Title>
+              <h2>
+                All <FaGithub /> Projects
+              </h2>
+              <div className="underline"></div>
+            </Title>
             <h2 className="my-5 text-center">{error}</h2>
           </StyledSection>
         </main>
@@ -140,16 +130,14 @@ export default function AllProjects() {
         </Element>
         <main>
           <StyledSection className="d-flex flex-column justify-content-center">
-            <Container className="d-flex">
-              <Title>
-                <h2>
-                  All <FaGithub /> Projects
-                </h2>
-                <div className="underline"></div>
-              </Title>
-            </Container>
+            <Title>
+              <h2>
+                All <FaGithub /> Projects
+              </h2>
+              <div className="underline"></div>
+            </Title>
             <Container>
-              <InputGroup className="mx-auto mb-3">
+              <InputGroup className="mb-4">
                 <InputGroup.Text id="search">
                   <FaSearch />
                 </InputGroup.Text>

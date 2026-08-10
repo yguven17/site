@@ -20,8 +20,10 @@ import NotFound from "./pages/NotFound";
 
 const theme = {
   name: "dark",
-  color: "#FBFDFF",
-  background: "#27272A",
+  color: "#E8EEF4",
+  background: "#0B0F14",
+  accent: "#FFB454",
+  muted: "#94A3B1",
 };
 
 export default function App() {

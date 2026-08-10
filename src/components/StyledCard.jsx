@@ -21,14 +21,14 @@ const StyledArticle = styled.article`
   flex-direction: column;
   height: 100%;
   padding: 1.25rem;
-  border: 1px solid rgba(251, 253, 255, 0.14);
+  border: 1px solid var(--line);
   border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface);
   transition: border-color 0.2s ease, transform 0.2s ease;
 
   &:hover,
   &:focus-within {
-    border-color: var(--primary);
+    border-color: var(--accent);
     transform: translateY(-2px);
   }
 
@@ -43,7 +43,7 @@ const StyledArticle = styled.article`
   .repo-description {
     font-size: 0.85rem;
     line-height: 1.5;
-    color: rgba(251, 253, 255, 0.72);
+    color: rgba(232, 238, 244, 0.78);
     margin: 0 0 1rem;
     flex: 1 1 auto;
     overflow: hidden;
@@ -56,7 +56,7 @@ const StyledArticle = styled.article`
     gap: 0.9rem;
     font-family: var(--font-mono);
     font-size: 0.72rem;
-    color: rgba(251, 253, 255, 0.6);
+    color: var(--muted);
     margin-bottom: 0.9rem;
   }
 
@@ -81,7 +81,7 @@ const StyledArticle = styled.article`
     font-family: var(--font-mono);
     font-size: 0.78rem;
     text-decoration: none;
-    color: var(--primary);
+    color: var(--accent);
     margin-top: auto;
 
     &:hover {

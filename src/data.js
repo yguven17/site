@@ -16,10 +16,13 @@ export const Blog = <FaLinkedin />;
 
 /* About Me
  **************************************************************
-  Add a second paragraph for the about me section.
+  One string per paragraph.
 */
-export const moreInfo =
-  "Backend Developer with 3+ years of full-time experience and 4+ years across backend, systems, and industrial software engineering. I design and operate Python/Django REST services, data pipelines, and cloud-hosted platforms for enterprise and industrial use cases, working hands-on with SQL databases, Redis, Kafka, Docker, AWS, GCP, and self-hosted infrastructure. I have built integrations and backend systems supporting tens of thousands of daily transactions, connecting APIs, optimization and machine-learning models, and OPC, PLC, and SCADA environments.";
+export const moreInfo = [
+  "Backend developer and systems engineer with 3+ years of full-time experience and 4+ years across backend, systems, and industrial software engineering. I design and operate the services enterprises run their operations on — REST APIs, distributed backend systems, and data pipelines — and I own them in production, not only in development.",
+  "My work runs the whole path from endpoint to infrastructure: relational databases, Redis and Kafka, scheduled pipelines, containerised deployments, and CI across AWS, GCP, Hetzner, and on-premise servers. I am comfortable in more than one stack, most often Python and Django, also Java and Spring Boot, and I pick the tool the problem asks for.",
+  "A good part of that work sits where software meets physical operations: connecting backend systems to optimization and machine-learning models, and to OPC, PLC, and SCADA environments. Those integrations carry tens of thousands of transactions a day and have to keep running when something upstream does not.",
+];
 
 /* Skills
  **************************************************************

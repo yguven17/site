@@ -8,7 +8,7 @@ import { Title } from "./globalStyledComponents";
 
 const StyledSkills = styled.section`
   .skill-group {
-    border-top: 1px solid rgba(97, 219, 251, 0.25);
+    border-top: 1px solid var(--line);
     padding-top: 1rem;
     height: 100%;
   }
@@ -18,7 +18,7 @@ const StyledSkills = styled.section`
     font-size: 0.75rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--primary);
+    color: var(--accent);
     margin-bottom: 0.85rem;
   }
 
@@ -35,7 +35,7 @@ const StyledSkills = styled.section`
     font-size: 0.9rem;
     line-height: 1.2;
     padding: 0.35rem 0.7rem;
-    border: 1px solid rgba(251, 253, 255, 0.16);
+    border: 1px solid var(--line);
     border-radius: 2rem;
     white-space: nowrap;
   }
@@ -46,13 +46,11 @@ export default function Skills() {
     <Element name={"Skills"} id="skills">
       <StyledSkills className="section">
         <Container>
-          <Container className="d-flex">
-            <Title>
-              <h2>Skills</h2>
-              <div className="underline"></div>
-            </Title>
-          </Container>
-          <Row xs={1} md={2} className="g-4 g-md-5 mt-1">
+          <Title>
+            <h2>Skills</h2>
+            <div className="underline"></div>
+          </Title>
+          <Row xs={1} md={2} className="g-4 mt-1">
             {skillGroups.map((group) => (
               <Col key={group.id}>
                 <div className="skill-group">

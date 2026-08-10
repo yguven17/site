@@ -67,14 +67,14 @@ export default function ContactForm() {
   return (
     <>
       <Form noValidate validated={isValidated} onSubmit={handleSubmit}>
-        <Form.Group className="mx-auto mb-3 form-group" controlId="name">
+        <Form.Group className="mb-3 form-group" controlId="name">
           <Form.Label>Name</Form.Label>
           <Form.Control required type="text" placeholder="Your name" />
           <Form.Control.Feedback type="invalid">
             <h5>Name must be at least one character.</h5>
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group className="mx-auto mb-3 form-group" controlId="email">
+        <Form.Group className="mb-3 form-group" controlId="email">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             required
@@ -86,14 +86,14 @@ export default function ContactForm() {
             <h5>Please enter a valid email.</h5>
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group className="mx-auto mb-3 form-group" controlId="message">
+        <Form.Group className="mb-3 form-group" controlId="message">
           <Form.Label>Message</Form.Label>
           <Form.Control required as="textarea" placeholder="Your message..." />
           <Form.Control.Feedback type="invalid">
             <h5>Please provide a valid message.</h5>
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group className="mx-auto text-center form-group">
+        <Form.Group className="form-group">
           {formspreeUrl && (
             <Button
               size="lg"

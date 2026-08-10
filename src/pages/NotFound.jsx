@@ -51,7 +51,7 @@ export default function NotFound() {
       <StyledNotFound>
         <Container className="d-flex justify-content-center">
           <span>4</span>
-          <img src={Logo} alt="React Logo" className="logo-img" />
+          <img src={Logo} alt="" className="logo-img" />
           <span>4</span>
         </Container>
         <p className="text-center">Sorry, page not found...</p>

@@ -24,7 +24,7 @@ export default function NavBar() {
         <Container>
           <Navbar.Brand>
             <img
-              alt="React Logo"
+              alt="Home"
               src={Logo}
               width="35"
               height="35"
@@ -56,7 +56,7 @@ export default function NavBar() {
                   className="nav-link"
                   onClick={closeExpanded}
                 >
-                  About Me
+                  About
                 </Link>
               </Nav.Item>
               
@@ -68,7 +68,7 @@ export default function NavBar() {
                   className="nav-link"
                   onClick={closeExpanded}
                 >
-                  Experiences
+                  Experience
                 </Link>
               </Nav.Item>
 

@@ -4,7 +4,8 @@ import SocialLinks from "./SocialLinks";
 
 const StyledFooter = styled.footer`
   min-height: var(--min-footer-height);
-  background: var(--primary);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
 
   a {
     color: #45413c;

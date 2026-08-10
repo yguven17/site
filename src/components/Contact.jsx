@@ -7,20 +7,28 @@ import { Title } from "./globalStyledComponents";
 import ContactForm from "./ContactForm";
 
 const StyledSection = styled.section`
-  padding: clamp(3.5rem, 9vw, 7rem) 0;
+  .intro {
+    max-width: var(--measure);
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: rgba(232, 238, 244, 0.8);
+    margin-bottom: 2.25rem;
+  }
 `;
 
 export default function Contact() {
   return (
     <Element name={"Contact"} id="contact">
-      <StyledSection className="d-flex flex-column justify-content-center">
-        <Container className="d-flex">
+      <StyledSection className="section">
+        <Container>
           <Title>
-            <h2>Contact Me</h2>
+            <h2>Contact</h2>
             <div className="underline"></div>
           </Title>
-        </Container>
-        <Container>
+          <p className="intro">
+            Open to backend roles and collaboration. Send a message and I will
+            get back to you.
+          </p>
           <ContactForm />
         </Container>
       </StyledSection>

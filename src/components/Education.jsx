@@ -1,91 +1,118 @@
 import styled from "styled-components";
 import { Element } from "react-scroll";
-// Data
-
 // Components
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Title } from "./globalStyledComponents";
-import education from "../images/koc.jpg";
 
 const StyledEducation = styled.section`
-  p {
-    font-size: 1.15rem;
-    text-align: center;
+  .entries {
+    display: grid;
+    gap: 2.25rem;
+    max-width: 62rem;
   }
+
+  .entry {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
   .school {
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: bold;
-    font-family: "Permanent Marker";
-    margin-top: 2rem;
-  }
-  .period {
+    font-family: var(--font-display);
     font-size: 1.25rem;
-    text-align: center;
+    font-weight: 600;
+    margin: 0 0 0.3rem;
   }
-  .img {
-    width: 18rem;
-    height: 18rem;
+
+  .degree {
+    margin: 0;
+    font-size: 0.98rem;
+    color: rgba(232, 238, 244, 0.8);
+  }
+
+  .period {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  .footnotes {
+    margin-top: 2.25rem;
+    display: grid;
+    gap: 0.75rem;
+    max-width: var(--measure);
+  }
+
+  .footnotes p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(232, 238, 244, 0.8);
+  }
+
+  .footnotes .label {
+    display: block;
+    margin-bottom: 0.2rem;
   }
 `;
 
+const EDUCATION = [
+  {
+    school: "Koç University",
+    degree: "B.Sc. Computer Engineering (Double Major) — Full Scholarship",
+    period: "2021 — 2023 · İstanbul",
+  },
+  {
+    school: "Koç University",
+    degree:
+      "B.Sc. Electrical and Electronics Engineering — Full Scholarship",
+    period: "2017 — 2023 · İstanbul",
+  },
+  {
+    school: "Kars Fen Lisesi",
+    degree: "Science high school",
+    period: "2013 — 2017 · Kars",
+  },
+];
+
 export default function Education() {
-
-
   return (
     <Element name={"Education"} id="education">
       <StyledEducation className="section">
         <Container>
-          <Container className="d-flex">
-            <Title>
-              <h2>Education</h2>
-              <div className="underline"></div>
-            </Title>
-          </Container>
-          <Row className="align-items-center mt-5">
-            <Col className="d-flex flex-column text-center">
-              <Container>
-                <h3 className="school">Koç University</h3>
-                <p>
-                  B.Sc. Computer Engineering (Double Major) &ndash; Full
-                  Scholarship
-                </p>
-                <p className="period">
-                  01/2021 &ndash; 06/2023 İstanbul, T&uuml;rkiye
-                </p>
-
-                <h3 className="school">Koç University</h3>
-                <p>
-                  B.Sc. Electrical and Electronics Engineering &ndash; Full
-                  Scholarship
-                </p>
-                <p className="period">
-                  08/2017 &ndash; 06/2023 İstanbul, T&uuml;rkiye
-                </p>
-
-                <h3 className="school">Kars Fen Lisesi</h3>
-                <p className="period">
-                  09/2013 &ndash; 06/2017 Kars, T&uuml;rkiye
-                </p>
-
-                <h3 className="school">Honors &amp; Languages</h3>
-                <p>
-                  Vehbi Koç Scholar (3 times); Koç University Anatolian
-                  Scholarship Program
-                </p>
-                <p className="period">Languages: Turkish, English</p>
-              </Container>
-            </Col>
-            <Col className="d-none d-md-block text-center">
-              <img
-                src={education}
-                alt="koc"
-                loading="lazy"
-                className="mx-auto rounded-circle"
-                style={{ width: "15rem", height: "15rem" }}
-              />
-            </Col>
-          </Row>
+          <Title>
+            <h2>Education</h2>
+            <div className="underline"></div>
+          </Title>
+          <div className="entries">
+            {EDUCATION.map((item) => (
+              <div className="entry" key={item.school + item.period}>
+                <div>
+                  <h3 className="school">{item.school}</h3>
+                  <p className="degree">{item.degree}</p>
+                </div>
+                <p className="period">{item.period}</p>
+              </div>
+            ))}
+          </div>
+          <div className="footnotes">
+            <p>
+              <span className="label">Honors</span>
+              Vehbi Koç Scholar (3 times) · Koç University Anatolian Scholarship
+              Program
+            </p>
+            <p>
+              <span className="label">Languages</span>
+              Turkish, English
+            </p>
+          </div>
         </Container>
       </StyledEducation>
     </Element>

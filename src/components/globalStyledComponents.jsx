@@ -27,7 +27,7 @@ export const Loading = styled.div`
   height: 5rem;
   border: 5px solid;
   border-radius: 50%;
-  border-top-color: var(--primary);
+  border-top-color: var(--accent);
   margin: 1rem auto;
   animation: ${spinner} 0.6s linear infinite;
 `;
@@ -37,24 +37,38 @@ export const FixedNavSpacer = styled.div`
   height: var(--nav-height);
 `;
 
-// Titles
+/* Section heading: a mono marker and a hairline rule that runs the full width,
+   so headings read like panel labels rather than decorated titles. */
 export const Title = styled.div`
-  display: inline-block;
-  margin: 0 auto;
-  font-family: "Permanent Marker";
-  text-align: center;
+  width: 100%;
+  margin-bottom: 2.5rem;
+
+  h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  h2::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--accent);
+    transform: translateY(-0.2em);
+  }
 
   .underline {
-    height: 0.25rem;
-    width: 75%;
-    min-width: 3rem;
-    border-radius: 0.25rem;
-    margin: 0 auto 1.5rem auto;
-    background: linear-gradient(
-      to right,
-      var(--primary-dark),
-      var(--primary-light)
-    );
+    height: 1px;
+    width: 100%;
+    margin-top: 1rem;
+    background: var(--line);
   }
 `;
 
@@ -66,7 +80,7 @@ const StyledDiv = styled.div`
   visibility: hidden;
 
   .link-icons {
-    color: #ebecf0;
+    color: var(--text);
   }
 
   &.show-up {

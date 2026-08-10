@@ -38,7 +38,7 @@ const StyledSection = styled.section`
     scroll-behavior: smooth;
     padding: 0.5rem 0.25rem 1.5rem;
     scrollbar-width: thin;
-    scrollbar-color: var(--primary-dark) transparent;
+    scrollbar-color: var(--line-strong) transparent;
   }
 
   .scroller::-webkit-scrollbar {
@@ -46,7 +46,7 @@ const StyledSection = styled.section`
   }
 
   .scroller::-webkit-scrollbar-thumb {
-    background: var(--primary-dark);
+    background: var(--line-strong);
     border-radius: 0.25rem;
   }
 
@@ -69,14 +69,14 @@ const StyledSection = styled.section`
     width: 2.75rem;
     height: 2.75rem;
     border-radius: 50%;
-    border: var(--border);
-    background: rgba(39, 39, 42, 0.85);
-    color: #fbfdff;
+    border: 1px solid var(--line-strong);
+    background: rgba(11, 15, 20, 0.9);
+    color: var(--text);
     transition: var(--transition);
   }
 
   .arrow:hover {
-    color: var(--primary);
+    color: var(--accent);
   }
 
   .arrow:disabled {
@@ -145,12 +145,10 @@ export default function Projects() {
     <Element name={"Projects"} id="projects">
       <StyledSection className="section">
         <Container>
-          <Container className="d-flex">
-            <Title>
-              <h2>Projects</h2>
-              <div className="underline"></div>
-            </Title>
-          </Container>
+          <Title>
+            <h2>Projects</h2>
+            <div className="underline"></div>
+          </Title>
           {isLoading && (
             <Container className="d-flex">
               <Loading />

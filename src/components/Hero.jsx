@@ -27,11 +27,11 @@ const StyledHero = styled.header`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--primary), var(--bs-dark));
+    background: linear-gradient(160deg, #16212B, var(--bg));
     z-index: -2;
   }
 
-  /* Overlay for contrast */
+  /* Scrim weighted to the left so the headline stays readable over the artwork */
   &::after {
     content: "";
     position: absolute;
@@ -39,7 +39,14 @@ const StyledHero = styled.header`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(
+        90deg,
+        rgba(11, 15, 20, 0.94) 0%,
+        rgba(11, 15, 20, 0.82) 38%,
+        rgba(11, 15, 20, 0.35) 70%,
+        rgba(11, 15, 20, 0.2) 100%
+      ),
+      linear-gradient(180deg, rgba(11, 15, 20, 0.5) 0%, transparent 30%);
     z-index: -1;
   }
 
@@ -47,9 +54,32 @@ const StyledHero = styled.header`
     height: 10rem;
   }
 
+  .name {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    text-transform: uppercase;
+    margin: 0 0 0.9rem;
+  }
+
   .role {
-    font-family: "Permanent Marker";
-    letter-spacing: 0.05em;
+    font-family: var(--font-mono);
+    font-size: clamp(0.8rem, 1.6vw, 0.95rem);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.75rem;
+  }
+
+  .summary {
+    max-width: 34rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(232, 238, 244, 0.75);
+    margin: 0 0 1.75rem;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -79,20 +109,21 @@ export default function Hero() {
   return (
     <StyledHero>
       <Container>
-        <Row className="align-items-center text-center">
-          <Col>
-            <h1 className="mb-2 display-3 title">{name}</h1>
-            <p className="mb-4 fs-4 role">Backend Developer</p>
-            <div className="d-flex align-items-center justify-content-center">
+        <Row className="align-items-center">
+          <Col xs={12} md={7}>
+            <p className="role">Backend · Systems · DevOps</p>
+            <h1 className="name">{name}</h1>
+            <p className="summary">
+              I design, build, and operate backend services and the systems they
+              run on — APIs, data pipelines, and the infrastructure behind them,
+              from enterprise cloud to the factory floor.
+            </p>
+            <div className="d-flex align-items-center">
               <SocialLinks />
             </div>
           </Col>
-          <Col className="d-none d-md-block">
-            <img
-              src={Logo}
-              alt="React Logo"
-              className="w-75 mx-auto hero-img"
-            />
+          <Col md={5} className="d-none d-md-block">
+            <img src={Logo} alt="" className="w-75 mx-auto hero-img" />
           </Col>
         </Row>
         <Row className="align-items-end down-container">
