@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { FaChevronCircleDown } from "react-icons/fa";
 // Media
 import Logo from "../images/logo.svg";
-import { Dark } from "../data";
+import { Dark, fullName } from "../data";
 // Components
 import { Col, Container, Row } from "react-bootstrap";
 import { Spin } from "./globalStyledComponents";
@@ -112,7 +112,7 @@ export default function Hero() {
         <Row className="align-items-center">
           <Col xs={12} md={7}>
             <p className="role">Backend · Systems · DevOps</p>
-            <h1 className="name">{name}</h1>
+            <h1 className="name">{name || fullName}</h1>
             <p className="summary">
               I design, build, and operate backend services and the systems they
               run on — APIs, data pipelines, and the infrastructure behind them,

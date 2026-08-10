@@ -25,3 +25,15 @@ root.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://cra.link/PWA
 serviceWorkerRegistration.register();
+
+// The service worker skips waiting, so a new deployment takes control as soon
+// as it activates. Reload once at that moment so the visitor sees the new build
+// instead of the one cached on their previous visit. The guard prevents a loop.
+if ("serviceWorker" in navigator) {
+  let reloading = false;
+  navigator.serviceWorker.addEventListener("controllerchange", function () {
+    if (reloading) return;
+    reloading = true;
+    window.location.reload();
+  });
+}

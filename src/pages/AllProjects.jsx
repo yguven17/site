@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { selectData as homeData } from "../pages/homeSlice";
 import { selectData, selectError, selectIsLoading } from "./allProjectsSlice";
 import { Element } from "react-scroll";
+import { fullName } from "../data";
 import styled from "styled-components";
 // Icons
 import { FaGithub, FaSearch } from "react-icons/fa";
@@ -44,7 +45,7 @@ export default function AllProjects() {
 
   React.useEffect(
     function () {
-      document.title = `${name} | All Projects`;
+      document.title = `${name || fullName} | All Projects`;
     },
     [name]
   );

@@ -11,6 +11,12 @@ export { HeroDark as Dark };
 */
 export const githubUsername = "yguven17";
 
+/* Used when the GitHub API is unreachable and no build-time snapshot exists,
+   so the page never renders an empty name or a dead link. */
+export const fullName = "Yakup Enes Güven";
+export const githubUrl = `https://github.com/${githubUsername}`;
+export const blogUrl = "https://www.linkedin.com/in/yakupenesguven/";
+
 // Blog link icon (imported above)
 export const Blog = <FaLinkedin />;
 

@@ -1,10 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchGitHubInfo,
-  selectError,
-  selectIsLoading,
-} from "./pages/homeSlice";
+import { fetchGitHubInfo, selectIsLoading } from "./pages/homeSlice";
 import { fetchGitHubReops } from "./pages/allProjectsSlice";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
@@ -28,7 +24,6 @@ const theme = {
 
 export default function App() {
   const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   React.useEffect(
@@ -39,21 +34,15 @@ export default function App() {
     [dispatch]
   );
 
+  // Only the very first paint waits, and only when there is nothing to show.
+  // A failed GitHub refresh must never replace the whole portfolio: the page
+  // renders from the build-time snapshot and each section handles its own gaps.
   if (isLoading) {
     return (
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Container className="d-flex vh-100 align-items-center">
           <Loading />
-        </Container>
-      </ThemeProvider>
-    );
-  } else if (error) {
-    return (
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Container className="d-flex vh-100 align-items-center justify-content-center">
-          <h2>{error}</h2>
         </Container>
       </ThemeProvider>
     );

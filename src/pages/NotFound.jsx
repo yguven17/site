@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectData } from "../pages/homeSlice";
+import { fullName } from "../data";
 import styled from "styled-components";
 // Media
 import Logo from "../images/logo.svg";
@@ -40,7 +41,7 @@ export default function NotFound() {
 
   React.useEffect(
     function () {
-      document.title = `${name} | Portfolio`;
+      document.title = `${name || fullName} | Portfolio`;
     },
     [name]
   );

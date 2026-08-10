@@ -2,6 +2,7 @@ import React from "react";
 import { Element } from "react-scroll";
 import { useSelector } from "react-redux";
 import { selectData } from "../pages/homeSlice";
+import { fullName } from "../data";
 // Components
 import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
@@ -19,7 +20,7 @@ export default function Home() {
 
   React.useEffect(
     function () {
-      document.title = `${name} | Portfolio`;
+      document.title = `${name || fullName} | Portfolio`;
     },
     [name]
   );

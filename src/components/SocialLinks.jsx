@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { selectData } from "../pages/homeSlice";
 import styled from "styled-components";
 // Data
-import { Blog } from "../data";
+import { Blog, blogUrl, githubUrl } from "../data";
 // Icons
 import { FaGithub } from "react-icons/fa";
 
@@ -19,7 +19,7 @@ export default function SocialLinks() {
   return (
     <StyledSocialLinks>
       <a
-        href={html_url}
+        href={html_url || githubUrl}
         aria-label="Check out my GitHub profile."
         className="link-icons"
         target="_blank"
@@ -27,9 +27,9 @@ export default function SocialLinks() {
       >
         <FaGithub />
       </a>
-      {blog && (
+      {(blog || blogUrl) && (
         <a
-          href={blog}
+          href={blog || blogUrl}
           aria-label="External link"
           className="link-icons"
           target="_blank"
