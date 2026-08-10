@@ -1,19 +1,17 @@
 {
   "files": {
     "main.css": "/site/static/css/main.deb5c223.css",
-    "main.js": "/site/static/js/main.a6363759.js",
+    "main.js": "/site/static/js/main.7a938e26.js",
     "static/media/hero-dark.jpg": "/site/static/media/hero-dark.f60ed2687214cd6ca026.jpg",
     "static/media/logo.svg": "/site/static/media/logo.725a1a671fe87983db993c900aa1aaca.svg",
     "static/media/photo.jpeg": "/site/static/media/photo.918e8775e5ecb865595f.jpeg",
-    "static/media/smartopt-logo.jpg": "/site/static/media/smartopt-logo.2ebc041a5cf31f0d9e91.jpg",
     "service-worker.js": "/site/service-worker.js",
-    "static/media/koc.jpg": "/site/static/media/koc.5f8274c1f615dc01a674.jpg",
     "index.html": "/site/index.html",
     "main.deb5c223.css.map": "/site/static/css/main.deb5c223.css.map",
-    "main.a6363759.js.map": "/site/static/js/main.a6363759.js.map"
+    "main.7a938e26.js.map": "/site/static/js/main.7a938e26.js.map"
   },
   "entrypoints": [
     "static/css/main.deb5c223.css",
-    "static/js/main.a6363759.js"
+    "static/js/main.7a938e26.js"
   ]
 }
